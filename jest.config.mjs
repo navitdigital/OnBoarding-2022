@@ -24,4 +24,9 @@ export default {
 
   // A list of reporter names that Jest uses when writing coverage reports
   coverageReporters: ['json', 'text', 'lcov', 'clover'],
+
+  // Transfom Using Sucrase
+  transform: {
+    '.(js|jsx|ts|tsx)': '@sucrase/jest-plugin',
+  },
 };
