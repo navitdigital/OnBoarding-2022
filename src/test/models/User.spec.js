@@ -15,16 +15,19 @@ describe('Model User', () => {
     );
   });
 
+  afterAll(async () => {
+    await db().user.deleteMany({ where: { id: { in: ids } } });
+  });
+
   describe('findAll', () => {
     const sut = makeSut();
     it('should be return some objects', async () => {
       let res = await sut.findAll();
 
-      expect(res).toHaveReturned([{ name: 'joao', email: 'joao@navit.com' }]);
+      expect(res.length > 0).toBeTruthy();
+      expect(
+        res.some((e) => e.name === 'joao' && e.email === 'joao@navit.com')
+      ).toBeTruthy();
     });
-  });
-
-  afterAll(async () => {
-    await db().user.deleteMany({ where: { id: { in: ids } } });
   });
 });
