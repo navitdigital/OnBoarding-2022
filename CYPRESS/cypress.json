@@ -1,0 +1,9 @@
+{
+  "testFiles": "**/*.feature",
+  "baseUrl": "http://maps.google.com",
+  "viewportWidth": 1366,
+  "viewportHeight": 768,
+  "video": false,
+  "trashAssetsBeforeRuns": true,
+  "defaultCommandTimeout": 10000
+}
