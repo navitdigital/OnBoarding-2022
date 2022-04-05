@@ -5,7 +5,7 @@ const findAll = async () => {
   try {
     return success(await User.findAll());
   } catch (e) {
-    return badRequest('e.message');
+    return badRequest(e.message);
   }
 };
 
